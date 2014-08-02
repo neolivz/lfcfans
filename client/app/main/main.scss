@@ -22,7 +22,7 @@
     background: #76292f;
 }
 
-.bodyClass{
+body{
   background: $navbar-bg-compliment;
 }
 
@@ -38,6 +38,11 @@
   background-color: #76292f;
   padding-top: $navbar-margin-bottom;
   color: #fff;
+  min-height: 700px;
+}
+
+.login{
+  padding-top: 25%;
 }
 
 .nonFloater{

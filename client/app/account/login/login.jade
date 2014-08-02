@@ -2,22 +2,19 @@ div.bkopTopBar(ng-include='"components/navbar/navbar.html"')
 .bkopContent
     .container
         div.nonFloater
-        div.row
+        div.row.login
             div.col-sm-4
               p(style='text-align: center')
-                  a.btn.btn-facebook(href='', ng-click='loginOauth("facebook")')
-                    i.fa.fa-facebook
-                    |  Connect with Facebook
-                  = ' '
+                  a.btn(href='', ng-click='loginOauth("facebook")')
+                    svg(rols='img',title='facebook')
+                        use(xlink:href='/assets/images/login.svg#facebook',transform='scale(0.5) translate(0)')
             div.col-sm-4
               p(style='text-align: center')
-                  a.btn.btn-google-plus(href='', ng-click='loginOauth("google")')
-                    i.fa.fa-google-plus
-                    |  Connect with Google+
-                  = ' '
+                  a.btn(href='', ng-click='loginOauth("google")')
+                      svg(rols='img',title='google')
+                          use(xlink:href='/assets/images/login.svg#google',transform='scale(0.5) translate(0)')
             div.col-sm-4
               p(style='text-align: center')
-                  a.btn.btn-twitter(href='', ng-click='loginOauth("twitter")')
-                    i.fa.fa-twitter
-                    |  Connect with Twitter
-      hr
+                  a.btn(href='', ng-click='loginOauth("twitter")')
+                      svg(rols='img',title='twitter')
+                          use(xlink:href='/assets/images/login.svg#twitter',transform='scale(0.5) translate(0)')
