@@ -1,0 +1,23 @@
+div.bkopTopBar(ng-include='"components/navbar/navbar.html"')
+.bkopContent
+    .container
+        div.nonFloater
+        div.row
+            div.col-sm-4
+              p(style='text-align: center')
+                  a.btn.btn-facebook(href='', ng-click='loginOauth("facebook")')
+                    i.fa.fa-facebook
+                    |  Connect with Facebook
+                  = ' '
+            div.col-sm-4
+              p(style='text-align: center')
+                  a.btn.btn-google-plus(href='', ng-click='loginOauth("google")')
+                    i.fa.fa-google-plus
+                    |  Connect with Google+
+                  = ' '
+            div.col-sm-4
+              p(style='text-align: center')
+                  a.btn.btn-twitter(href='', ng-click='loginOauth("twitter")')
+                    i.fa.fa-twitter
+                    |  Connect with Twitter
+      hr
