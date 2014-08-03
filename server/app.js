@@ -10,6 +10,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
+var session = require('express-session')
+
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -23,11 +25,8 @@ var server = require('http').createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
 
-mongoose.connection.on('connected', function () {
-	// Start server
-	server.listen(config.port, config.ip, function() {
-	    console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
-	});
+server.listen(config.port, config.ip, function () {
+    console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
 // Expose app

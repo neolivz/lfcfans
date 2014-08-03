@@ -31,7 +31,6 @@ module.exports = function(app) {
   app.use(cookieParser());
   app.use(passport.initialize());
 
-  mongoose.connection.on('connected', function () {
     // Persist sessions with mongoStore
     // We need to enable sessions for passport twitter because its an oauth 1.0 strategy
     app.use(session({
@@ -40,7 +39,6 @@ module.exports = function(app) {
       saveUninitialized: true,
       store: new mongoStore({ mongoose_connection: mongoose.connection })
     }));
-  });
 
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));

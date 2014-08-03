@@ -34,10 +34,10 @@ div(ng-include='"components/navbar/navbar.html"')
                 | {{ errors.password }}
 
             div
-              button.btn.btn-inverse.btn-lg.btn-login(type='submit')
+              button.btn.btn-inverse.btn-lg.btn-login.btn-danger(type='submit')
                 | Sign up
               = ' '
-              a.btn.btn-default.btn-lg.btn-register(href='/login')
+              a.btn.btn-default.btn-lg.btn-register.btn-success(href='/login')
                 | Login
 
 
