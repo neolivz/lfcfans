@@ -12,6 +12,7 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  profilePicture:String,
   hashedPassword: String,
   provider: String,
   salt: String,
@@ -74,6 +75,12 @@ UserSchema
     if (authTypes.indexOf(this.provider) !== -1) return true;
     return hashedPassword.length;
   }, 'Password cannot be blank');
+
+UserSchema
+    .path('profilePicture')
+    .validate(function(value,respond){
+        respond(true);
+    })
 
 // Validate email is not taken
 UserSchema

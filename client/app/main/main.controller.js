@@ -1,22 +1,24 @@
 'use strict';
 
 angular.module('bkopApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $http,Auth) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+        $scope.isLoggedIn = Auth.isLoggedIn;
+        $scope.getCurrentUser = Auth.getCurrentUser;
+
+        console.log("Get Current User",Auth.getCurrentUser());
+
+        $scope.loadNewPage = function(page){
+            var url;
+            if(page ==='facebook'){
+                url = 'http://goo.gl/gVuqc6';
+            }else if(page === 'google'){
+                url='http://goo.gl/mnXmXN';
+            }else if (page === 'twitter'){
+                url = 'http://goo.gl/zff0wy';
+            }
+            var win = window.open(url, '_blank');
+            win.focus();
+        };
+
     });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-  });

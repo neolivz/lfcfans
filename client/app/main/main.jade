@@ -1,23 +1,38 @@
 div(ng-include='"components/navbar/navbar.html"')
 
+
+
 header#banner.hero-unit
   .container
-    h1 'Allo, 'Allo!
-    p.lead Kick-start your next web app with Angular Fullstack
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+    h1(ng-show='isLoggedIn()') 'Welcome! {{ getCurrentUser().name }}'
+    h1(ng-hide='isLoggedIn()') 'Welcome! Random Stranger, Join Us'
+    p.lead You Will Never Walk Alone
+    img(ng-hide='isLoggedIn()', src='assets/images/steven-gerrrd.png' height='200px', alt='I\'m Yeoman')
+    img(ng-show='isLoggedIn()' src='{{getCurrentUser().profilePicture}}', height='200px' alt='{{getCurrentUser().name}}')
 
-.container
-  .row
-    .col-lg-12
-      h1.page-header Features:
-      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='thing in awesomeThings')
-        li
-          a(href='#', tooltip='{{thing.info}}')
-            | {{thing.name}}
+.container.whiteShadowBox
+    .row
+        .col-lg-12
+            h1.centralAlign Like Us
+
+    .row
+        .col-lg-4
+            p.centralAlign
+                    svg(rols='img', title='facebook', ng-click='loadNewPage("facebook")')
+                        use(xlink:href='/assets/images/login.svg#facebook',transform='scale(0.5) translate(0)')
+        .col-lg-4
+            p.centralAlign
+                    svg(rols='img',title='google', ng-click='loadNewPage("google")')
+                        use(xlink:href='/assets/images/login.svg#google',transform='scale(0.5) translate(0)')
+        .col-lg-4
+            p.centralAlign
+                    svg(rols='img',title='twitter',ng-click='loadNewPage("twitter")' )
+                        use(xlink:href='/assets/images/login.svg#twitter',transform='scale(0.5) translate(0)')
+
 
 footer.footer
   .container
     p
-      a(href='https://twitter.com/tyhenkel') @tyhenkel
+      a(href='https://twitter.com/neolivz_lfc') @neolivz_lfc
       = ' | '
       a(href='https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open') Issues

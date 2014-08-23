@@ -4,7 +4,7 @@
 
 #banner {
     border-bottom: none;
-    margin-top: -20px;
+    margin-top: 0px;
 }
 
 #banner h1 {
@@ -45,6 +45,24 @@ body{
   padding-top: 25%;
 }
 
+.whiteShadowBox{
+  background-color: white;
+  margin-top: 100px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  box-shadow: 0 0 50px #000;
+  width: 100%;
+}
+
+
+
+.centralAlign svg{
+  margin-left: 30%;
+}
+.centralAlign{
+  text-align: center
+}
+
 .nonFloater{
   @include clearfix();
 }
@@ -52,4 +70,17 @@ body{
 .navbar{
   //Instead of navbar carrying the info it's pushed to the contentBar
   margin-bottom: 0px;
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .whiteShadowBox{
+    width: 85%;
+    box-shadow: 0 0 100px #000;
+    border-radius: 10px;
+  }
+
+}
+
+.gallery .row{
+  margin-bottom: 5%;
 }

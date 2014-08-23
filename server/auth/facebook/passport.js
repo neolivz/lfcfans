@@ -8,8 +8,11 @@ exports.setup = function (User, config) {
       callbackURL: config.facebook.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
+      console.log(profile._json);
+
+
       User.findOne({
-        'facebook.id': profile.id
+        'email': profile.emails[0].value
       },
       function(err, user) {
         if (err) {
@@ -19,6 +22,7 @@ exports.setup = function (User, config) {
           user = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
+            profilePicture:'http://graph.facebook.com/'+profile._json.id+'/picture?height=200',
             role: 'user',
             username: profile.username,
             provider: 'facebook',

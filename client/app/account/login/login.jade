@@ -4,17 +4,14 @@ div.bkopTopBar(ng-include='"components/navbar/navbar.html"')
         div.nonFloater
         div.row.login
             div.col-sm-4
-              p(style='text-align: center')
-                  a.btn(href='', ng-click='loginOauth("facebook")')
-                    svg(rols='img',title='facebook')
+              p.centralAlign
+                    svg(rols='img',title='facebook',ng-click='loginOauth("facebook")')
                         use(xlink:href='/assets/images/login.svg#facebook',transform='scale(0.5) translate(0)')
             div.col-sm-4
-              p(style='text-align: center')
-                  a.btn(href='', ng-click='loginOauth("google")')
-                      svg(rols='img',title='google')
+              p.centralAlign
+                      svg(rols='img',title='google',ng-click='loginOauth("google")')
                           use(xlink:href='/assets/images/login.svg#google',transform='scale(0.5) translate(0)')
             div.col-sm-4
-              p(style='text-align: center')
-                  a.btn(href='', ng-click='loginOauth("twitter")')
-                      svg(rols='img',title='twitter')
+              p.centralAlign
+                      svg(rols='img',title='twitter', ng-click='loginOauth("twitter")')
                           use(xlink:href='/assets/images/login.svg#twitter',transform='scale(0.5) translate(0)')

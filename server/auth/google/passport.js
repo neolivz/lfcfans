@@ -9,12 +9,13 @@ exports.setup = function (User, config) {
     },
     function(accessToken, refreshToken, profile, done) {
       User.findOne({
-        'google.id': profile.id
+        'email': profile.emails[0].value
       }, function(err, user) {
         if (!user) {
           user = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
+            profilePicture:profile._json.picture,
             role: 'user',
             username: profile.username,
             provider: 'google',
