@@ -1,11 +1,5 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.bkopContent
-    .container.gallery
-        div.row(ng-repeat='picgroup in pics | orderBy:orderBy |imagegroup:3')
-            div.col-sm-4(ng-repeat='p in picgroup')
-                img(ng-src='{{p.images.low_resolution.url}}')
-
 footer.footer
     .container
         p

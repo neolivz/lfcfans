@@ -18,7 +18,5 @@ angular.module('bkopApp')
         };
         $scope.getMore();
 
-        $scope.tags = [
-            'Bootstrap', 'AngularJS', 'Instagram', 'Factory'
-        ]
+
   });

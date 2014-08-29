@@ -7,7 +7,7 @@ header#banner.hero-unit
     h1(ng-show='isLoggedIn()') 'Welcome! {{ getCurrentUser().name }}'
     h1(ng-hide='isLoggedIn()') 'Welcome! Random Stranger, Join Us'
     p.lead You Will Never Walk Alone
-    img(ng-hide='isLoggedIn()', src='assets/images/steven-gerrrd.png' height='200px', alt='I\'m Yeoman')
+    img(ng-hide='isLoggedIn()', src='assets/images/steven-gerrrd.png' height='200px', alt='I\'m SteveG')
     img(ng-show='isLoggedIn()' src='{{getCurrentUser().profilePicture}}', height='200px' alt='{{getCurrentUser().name}}')
 
 .container.whiteShadowBox
@@ -16,18 +16,22 @@ header#banner.hero-unit
             h1.centralAlign Like Us
 
     .row
-        .col-lg-4
+        .col-lg-3
             p.centralAlign
                     svg(rols='img', title='facebook', ng-click='loadNewPage("facebook")')
                         use(xlink:href='/assets/images/login.svg#facebook',transform='scale(0.5) translate(0)')
-        .col-lg-4
+        .col-lg-3
             p.centralAlign
                     svg(rols='img',title='google', ng-click='loadNewPage("google")')
                         use(xlink:href='/assets/images/login.svg#google',transform='scale(0.5) translate(0)')
-        .col-lg-4
+        .col-lg-3
             p.centralAlign
                     svg(rols='img',title='twitter',ng-click='loadNewPage("twitter")' )
                         use(xlink:href='/assets/images/login.svg#twitter',transform='scale(0.5) translate(0)')
+        .col-lg-3
+            p.centralAlign
+                    svg(rols='img',title='instagram',ng-click='loadNewPage("instagram")' )
+                        use(xlink:href='/assets/images/login.svg#instagram',transform='scale(0.5) translate(0)')
 
 
 footer.footer
@@ -35,4 +39,4 @@ footer.footer
     p
       a(href='https://twitter.com/neolivz_lfc') @neolivz_lfc
       = ' | '
-      a(href='https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open') Issues
+      a(href='https://github.com/neolivz/lfcfans/issues?state=open') Issues

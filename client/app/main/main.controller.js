@@ -16,6 +16,8 @@ angular.module('bkopApp')
                 url='http://goo.gl/mnXmXN';
             }else if (page === 'twitter'){
                 url = 'http://goo.gl/zff0wy';
+            }else if(page ==='instagram'){
+                url = 'http://goo.gl/pF3ZTy';
             }
             var win = window.open(url, '_blank');
             win.focus();

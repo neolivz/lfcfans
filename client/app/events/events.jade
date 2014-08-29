@@ -1,10 +1,7 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.bkopContent
-    .container.gallery
-        div.row(ng-repeat='picgroup in pics | orderBy:orderBy |imagegroup:3')
-            div.col-sm-4(ng-repeat='p in picgroup')
-                img(ng-src='{{p.images.low_resolution.url}}')
+//link(rel="import", href="google-map.html")
+//google-map(lat="37.790", long="-122.390")
 
 footer.footer
     .container
