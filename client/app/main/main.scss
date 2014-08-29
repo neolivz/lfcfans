@@ -1,4 +1,8 @@
 $navbar-bg-compliment:             #76292f !default;
+$navbar-default-color:             #ffcc00 !default;
+$navbar-default-bg:                #d0202e !default;
+$navbar-bg-compliment:             #76292f !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 .thing-form {
     margin: 20px 0;
 }
