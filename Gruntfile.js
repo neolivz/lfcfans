@@ -276,17 +276,6 @@ module.exports = function (grunt) {
       }
     },
 
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.client %>/assets/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/public/assets/images'
-        }]
-      }
-    },
-
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
     ngAnnotate: {
@@ -338,7 +327,9 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
+        files: [
+            {expand: true, cwd: '<%= yeoman.client %>/assets/images', src: ['{,*/}*.svg'], dest: '<%= yeoman.dist %>/public/assets/images'},
+            {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.client %>',
@@ -395,8 +386,7 @@ module.exports = function (grunt) {
       dist: [
         'jade',
         'sass',
-        'imagemin',
-        'svgmin'
+        'imagemin'
       ]
     },
 
