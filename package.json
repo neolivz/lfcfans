@@ -8,7 +8,7 @@
     "compression": "~1.0.1",
     "connect-mongo": "^0.4.1",
     "cookie-parser": "~1.0.1",
-    "email-templates": "^1.1.1",
+    "email-templates": "^2.0.0",
     "errorhandler": "~1.0.0",
     "express": "~4.15.5",
     "express-jwt": "^0.1.3",
